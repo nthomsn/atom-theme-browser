@@ -1,6 +1,12 @@
 class MainController < ApplicationController
   def index
-    @themes = Theme.order(downloads: :desc).page(1).per(20)
+    if params[:sort] == 'downloads'
+      @themes = Theme.order(downloads: :desc).page(params[:page]).per(20)
+      @sorted_by = "Downloads"
+    else
+      @themes = Theme.order(stars: :desc).page(params[:page]).per(20)
+      @sorted_by = "Stars"
+    end
   end
 
   def pretty_theme_name(name)

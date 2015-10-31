@@ -1,5 +1,19 @@
+<div class="options-header">
+  <span class="dropdown-label">Sort by</span>
+  <div class="btn-group">
+    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+    <%= @sorted_by %>
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <% if @sorted_by == "Downloads" %>
+        <li><%= link_to "Stars", params.merge(:sort => "stars", :page => "1")%></li>
+      <% else %>
+        <li><%= link_to "Downloads", params.merge(:sort => "downloads", :page => "1")%></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
 
-<ul>
 <% @themes.each_slice(2) do |slice| %>
   <div class="row">
     <% slice.each do |theme| %>
@@ -19,8 +33,8 @@
           <div class="theme-image">
             <%= image_tag theme.name+"-first", class:"img-responsive" %>
             <div class="theme-details">
-              <input class="auto-select"
-                value="<%= theme.name %>" size="<%= theme.name.length%>"></input>
+              <input type="text" class="auto-select form-control"
+                value="<%= theme.name %>"></input>
               <p><%= link_to "View on GitHub",repo_link(theme.repo) %></p>
             </div>
           </div>
@@ -29,4 +43,7 @@
     <% end %>
   </div>
 <% end %>
-</ul>
+
+<div class="navigation-footer">
+  <%= paginate @themes %>
+</div>
