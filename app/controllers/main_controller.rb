@@ -15,6 +15,11 @@ class MainController < ApplicationController
     return num
   end
 
+  def repo_link(repo_name)
+    return 'https://github.com/' + repo_name
+  end
+
   helper_method :pretty_theme_name
   helper_method :pretty_number
+  helper_method :repo_link
 end

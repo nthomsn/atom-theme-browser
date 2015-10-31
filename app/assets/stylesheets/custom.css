@@ -13,6 +13,10 @@ div.theme-preview {
   padding: 1em;
 }
 
+div.light-hover:hover {
+  box-shadow: 1px 1px 5px grey;
+}
+
 h3.theme-title {
   display: inline-block;
   margin: 0;
@@ -28,12 +32,20 @@ div.theme-image {
   overflow: hidden;
 }
 
-img.theme-hovered {
+img.theme-clicked {
   opacity: 0.05;
 }
 
 div.theme-details {
+  display: none;
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+div.theme-details > input {
+  margin-bottom: 1em;
+  text-align: center;
 }

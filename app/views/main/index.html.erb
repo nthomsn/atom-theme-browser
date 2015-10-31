@@ -4,7 +4,7 @@
   <div class="row">
     <% slice.each do |theme| %>
       <div class="col-lg-6">
-        <div class="theme-preview">
+        <div class="theme-preview light-hover">
           <h3 class="theme-title"><%= pretty_theme_name(theme.name) %></h3>
           <span class="theme-stats text-muted">
             <span><i class="fa fa-download"></i>
@@ -18,7 +18,11 @@
           </span>
           <div class="theme-image">
             <%= image_tag theme.name+"-first", class:"img-responsive" %>
-            <div class="theme-details">DERP</div>
+            <div class="theme-details">
+              <input class="auto-select"
+                value="<%= theme.name %>" size="<%= theme.name.length%>"></input>
+              <p><%= link_to "View on GitHub",repo_link(theme.repo) %></p>
+            </div>
           </div>
         </div>
       </div>
