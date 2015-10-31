@@ -2,7 +2,8 @@ source 'https://rubygems.org'
 
 # Non-default gems
 gem 'nokogiri'
-gem 'dimensions'
+gem 'fastimage'
+gem 'kaminari'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'

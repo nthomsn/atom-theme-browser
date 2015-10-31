@@ -1,1 +1,28 @@
-<h1>Here are some cool atom themes</h1>
+
+<ul>
+<% @themes.each_slice(2) do |slice| %>
+  <div class="row">
+    <% slice.each do |theme| %>
+      <div class="col-lg-6">
+        <div class="theme-preview">
+          <h3 class="theme-title"><%= pretty_theme_name(theme.name) %></h3>
+          <span class="theme-stats text-muted">
+            <span><i class="fa fa-download"></i>
+            <%= pretty_number(theme.downloads) %>
+            </span>
+            &nbsp
+            <span>
+            <i class="fa fa-star"></i>
+            <%= pretty_number(theme.stars) %>
+            </span>
+          </span>
+          <div class="theme-image">
+            <%= image_tag theme.name+"-first", class:"img-responsive" %>
+            <div class="theme-details">DERP</div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+</ul>
