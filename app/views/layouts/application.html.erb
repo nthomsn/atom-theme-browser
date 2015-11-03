@@ -6,12 +6,21 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
+  <%= favicon_link_tag 'logo/AtomThemeBrowser.ico' %>
+
   <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 </head>
 <body>
 <nav class="navbar navbar-default navbar-static-top">
-  <div class="main-navbar">
-    <h1 class="title">Atom Theme Browser</h1>
+  <div class="container">
+    <div class="navbar-header">
+      <%= image_tag 'logo/AtomThemeBrowser.png', class:"brand-image" %>
+      <h3 class="brand-text">Atom Theme Browser</h3>
+    </div>
+      <ul class="nav navbar-nav navbar-right">
+            <li class="<%= 'active' if params[:controller] == 'main' %>"><a href="/">Home</a></li>
+            <li class="<%= 'active' if params[:controller] == 'pages' %>"><a href="/pages/installing">Installing Themes</a></li>
+      </ul>
   </div>
 </nav>
 <div class="container">
@@ -19,5 +28,10 @@
 <%= yield %>
 
 </div>
+<footer class="footer">
+    <div class="container">
+      <p class="text-muted"><a href="https://github.com/nthomsn/atom-theme-browser">Source</a></p>
+    </div>
+</footer>
 </body>
 </html>

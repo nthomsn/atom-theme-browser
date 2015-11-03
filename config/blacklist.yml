@@ -1,1 +1,17 @@
+# These themes have been abandoned or don't have good preview images
 - atom-material-ui
+- seti-monokai
+- yosemite-unity-ui
+
+# These are the default themes
+- atom-dark-ui
+- solarized-dark-syntax
+- base16-tomorrow-dark-theme
+- solarized-light-syntax
+- atom-light-ui
+- atom-dark-syntax
+- atom-light-syntax
+- base16-tomorrow-light-theme
+- one-dark-ui
+- one-dark-syntax
+- one-light-syntax

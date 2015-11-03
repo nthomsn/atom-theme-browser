@@ -21,17 +21,17 @@
         <div class="theme-preview light-hover">
           <h3 class="theme-title"><%= pretty_theme_name(theme.name) %></h3>
           <span class="theme-stats text-muted">
-            <span><i class="fa fa-download"></i>
-            <%= pretty_number(theme.downloads) %>
-            </span>
-            &nbsp
             <span>
             <i class="fa fa-star"></i>
             <%= pretty_number(theme.stars) %>
             </span>
+            &nbsp
+            <span><i class="fa fa-download"></i>
+            <%= pretty_number(theme.downloads) %>
+            </span>
           </span>
           <div class="theme-image">
-            <%= image_tag theme.name+"-first", class:"img-responsive" %>
+            <%= image_tag theme.name+"-first", class:"img-responsive img-theme" %>
             <div class="theme-details">
               <input type="text" class="auto-select form-control"
                 value="<%= theme.name %>"></input>
