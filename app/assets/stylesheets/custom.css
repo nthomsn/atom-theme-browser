@@ -1,6 +1,11 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
 body {
   background-color: #f4f4f4;
   font-family: 'Lato', sans-serif;
+  margin-bottom: 60px;
 }
 
 h3.brand-text {
@@ -101,6 +106,10 @@ div.navigation-footer {
   height: 60px;
 }
 
-.footer > p {
-  padding: 0 15px;
+.footer > div {
+  margin-top: 20px;
+}
+
+a.muted-link {
+  color: #777 !important;
 }
